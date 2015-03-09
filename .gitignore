@@ -1,2 +1,6 @@
-.capistrano
 node_modules/
+.sass-cache/
+deploy/
+assets/
+*.zip
+**/*.html

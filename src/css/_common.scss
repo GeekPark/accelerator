@@ -1,0 +1,52 @@
+// pc-root class 用于切换背景动画
+
+.pc-root {
+  .section {
+    background-size: 100% 100%;
+    background-position: center center;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-image: none;
+    text-align: center;
+  }
+
+  .page-home {
+    background-size: 100% 100%;
+    background-image: url(../images/pages/bg-home.jpg);
+  }
+
+  .page-commun,.page-summary {
+    background-color: #009fed;
+  }
+
+  .page-attention {
+    background-color: #42af5c;
+  }
+
+  .page-next {
+    background-color: #e8b400;
+  }
+
+  .page-partner {
+    background-color: #923ab8;
+  }
+
+  .page-time,.page-plugin,.page-forward,.page-joinus {
+    background-color: #eef1f5;
+  }
+
+  .logo {
+    width: 172px;
+    height: 34px;
+    background-size: 100% 100%;
+    display: inline-block;
+    background-image: url(../images/logo.png);
+  }
+}
+
+
+@keyframes flipBottom {
+  0%{transform: translateY(20px);opacity: 0;}
+  50%{transform: translateY(10px);opacity: 0.5;}
+  100%{transform: translateY(0px);opacity: 1;}
+}
