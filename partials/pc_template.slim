@@ -1,15 +1,45 @@
 #fullpage
   .section.active.page-home
-    .container
-      a.logo href= "//geekpark.net" target="_blank"
-      .txt
-      .arrow-tip
+    a.logo href= "//geekpark.net" target="_blank"
+    .txt
+    .arrow-tip
   .section.page-commun
+    .bubble
+    .page-commun-txt
+    .big-bubble
+      .item.item1
+      .item.item2
+      .item.item3
+      .item.item4
+      .item.item5
   .section.page-attention
+    .dib-center.circle
+    .db-center.page-attention-txt
   .section.page-next
+    .dollar
+      .item.section1
+      .item.section2
+      .item.section3
+    .page-next-main
+      .page-next-puzzle
+      .page-next-txt
   .section.page-partner
+    - for i in (1..11)
+      div class="item person#{i}"
+    .db-center.page-partner-txt
   .section.page-time
+    .page-time-txt
+    .watch
   .section.page-plugin
+    .commonbg.underline
+    .commonbg.plus
+    .commonbg.gicon
+    .commonbg.page-plugin-txt
   .section.page-forward
+    .page-forward-txt
+    - for i in (1..3)
+      div class="cloud cloud#{i}"
+    - for i in (1..7)
+      div class="bar bar#{i}"
   .section.page-summary
   .section.page-joinus

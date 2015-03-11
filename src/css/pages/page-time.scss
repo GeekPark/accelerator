@@ -1,0 +1,25 @@
+.pc-root .page-time {
+  .watch {
+    $size: 1140px;
+    width: $size/2;
+    height: $size/2;
+    background: url(../images/pages/watch.png) 0 0 no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    left: -100px;
+  }
+  .page-time-txt {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    right: -100px;
+    z-index: 5;
+    width: (1286px/2);
+    height: (74px/2);
+    background: url(../images/pages/page-time-txt.png) center center no-repeat #EEF1F5;
+    background-size: 100%;
+    padding: 15px;
+  }
+}

@@ -1,0 +1,49 @@
+.pc-root .page-plugin {
+  $bgw: (1142px/2);
+  $bgh: (594px/2);
+  .commonbg {
+    background: url(../images/pages/page-plugin-txt.png) 0 0 no-repeat;
+    background-size: $bgw $bgh;
+  }
+  @mixin adjustBg($x, $y, $w, $h) {
+    background-position-x: -($x/2);
+    background-position-y: -($y/2);
+    width: ($w/2);
+    height: ($h/2);
+  }
+  .underline {
+    display: inline-block;
+    $x: 120px;
+    $y: 253px;
+    $w: 265px;
+    $h: 8px;
+    @include adjustBg($x, $y, $w, $h);
+  }
+  .plus {
+    display: inline-block;
+    $w: 117px;
+    $h: 120px;
+    $x: 472px;
+    $y: 74px;
+    @include adjustBg($x, $y, $w, $h);
+    margin: 0 50px;
+  }
+  .gicon {
+    display: inline-block;
+    $w: 260px;
+    $h: 254px;
+    $x: 691px;
+    $y: 0px;
+    @include adjustBg($x, $y, $w, $h);
+  }
+  .page-plugin-txt {
+    $w: 1142px;
+    $h: 158px;
+    $x: 0;
+    $y: 438px;
+    @include adjustBg($x, $y, $w, $h);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
+}

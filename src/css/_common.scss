@@ -1,4 +1,14 @@
 // pc-root class 用于切换背景动画
+.dib-center {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.db-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .pc-root {
   .section {

@@ -1,6 +1,6 @@
 node_modules/
 .sass-cache/
-deploy/
-assets/
 *.zip
-**/*.html
+.bundle/
+.capistrano/
+

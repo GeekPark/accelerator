@@ -7,11 +7,13 @@
       margin-top: 5%;
       height: 176px;
       background: url(../images/pages/page-home-txt.png) center center no-repeat;
+      background-size: auto 100%;
       margin-bottom: 10%;
     }
     .arrow-tip {
       display: inline-block;
       background: url(../images/arrow.png) center center no-repeat;
+      background-size: 100%;
       width: 59px;
       height: 57px;
       position: absolute;

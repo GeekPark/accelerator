@@ -1,0 +1,20 @@
+.pc-root .page-partner {
+  .item {
+    display: inline-block;
+    width: 70px;
+    height: (318px/2);
+    background: url(../images/pages/page-partner-person.png) -75px 0 no-repeat;
+    background-size: 140px (318px/2);
+    margin: 0 5px;
+  }
+  .person6 {
+    background-position-x: 7px;
+  }
+  .page-partner-txt {
+    width: (936px/2);
+    height: (184px/2);
+    background: url(../images/pages/page-partner-txt.png) 0 0 no-repeat;
+    background-size: 100%;
+    margin-top: 5%;
+  }
+}

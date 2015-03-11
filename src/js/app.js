@@ -23,6 +23,8 @@ $(function() {
           $pcRoot.find('#fullpage').addClass(nowPage);
         }
       });
+
+      $.fn.fullpage.moveTo(8);
     });
   }
 
