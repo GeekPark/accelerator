@@ -753,7 +753,7 @@ th {
 .pc-root .page-join-us .join-us {
   text-decoration: none;
   width: 161px;
-  height: 45px;
+  height: 45.5px;
   position: relative;
   left: -80.5px; }
   .pc-root .page-join-us .join-us span {
@@ -826,13 +826,15 @@ th {
 
 .pc-root .page-partner .item {
   display: inline-block;
-  width: 70px;
+  width: 64.5px;
   height: 159px;
-  background: url(../images/pages/page-partner-person.png) -75px 0 no-repeat;
-  background-size: 140px 159px;
+  background: url(../images/pages/page-partner-person.png)-87.5px 0 no-repeat;
+  background-size: 152px 159px;
   margin: 0 5px; }
 .pc-root .page-partner .person6 {
-  background-position-x: 7px; }
+  width: 62px;
+  height: 159px;
+  background-position-x: 0px; }
 .pc-root .page-partner .page-partner-txt {
   width: 468px;
   height: 92px;
