@@ -770,17 +770,17 @@ th {
     background-size: (1182px/2) (274px/2);
     position: absolute;
     left: 50%;
-    bottom: 30%;
+    bottom: 25%;
     margin-left: -55.5px;
     z-index: 5;
   }
   .cloud1 {
     left: 40%;
-    bottom: 15%;
+    bottom: 5%;
   }
   .cloud3 {
     left:60%;
-    bottom: 20%;
+    bottom: 10%;
   }
   /* .bar-area {
     position: relative;
@@ -793,6 +793,7 @@ th {
   }
   .bar-area {
     height: 360px;
+    position: relative;
   }
   .bar {
     width: 60px;
@@ -802,7 +803,7 @@ th {
     left: 50%;
     margin-left: -30px;
     background-color: #009fed;
-    bottom: 5%;
+    bottom: -10%;
   }
   .bar1 {
     @include barList(3);
@@ -868,6 +869,36 @@ th {
 } // .pc-root end
 
 
+.pc-root .page-join-us {
+  .join-us {
+    text-decoration: none;
+    width: (322px/2);
+    height: (90px/2);
+    position: relative;
+    left: -(322px/4);
+    span {
+      background: url(../images/join_us.png) 0 0 no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: 100%;
+      transition: all 0.2s ease;
+      transform: scaleY(1);
+      &.hover {
+        transform: scaleY(0);
+        background-position-y: -45.5px;
+      }
+    }
+    &:hover {
+      span.normal {
+        transform: scaleY(0);
+      }
+      span.hover {
+        transform: scaleY(1);
+      }
+    }
+  }
+}
 
 .pc-root .page-next {
   .dollar {
@@ -993,6 +1024,15 @@ th {
   }
 }
 
+.pc-root .page-summary {
+  .page-summary-txt {
+    width: (1138px/2);
+    height: (178px/2);
+    background: url(../images/pages/page-summary-txt.png) 0 0 no-repeat;
+    background-size: 100%;
+    margin-bottom: 10%;
+  }
+}
 
 .pc-root .page-time {
   .watch {

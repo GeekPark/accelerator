@@ -24,7 +24,7 @@ $(function() {
         }
       });
 
-      $.fn.fullpage.moveTo(8);
+      // $.fn.fullpage.moveTo(10);
     });
   }
 

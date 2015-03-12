@@ -16,17 +16,17 @@
     background-size: (1182px/2) (274px/2);
     position: absolute;
     left: 50%;
-    bottom: 30%;
+    bottom: 25%;
     margin-left: -55.5px;
     z-index: 5;
   }
   .cloud1 {
     left: 40%;
-    bottom: 15%;
+    bottom: 5%;
   }
   .cloud3 {
     left:60%;
-    bottom: 20%;
+    bottom: 10%;
   }
   /* .bar-area {
     position: relative;
@@ -39,6 +39,7 @@
   }
   .bar-area {
     height: 360px;
+    position: relative;
   }
   .bar {
     width: 60px;
@@ -48,7 +49,7 @@
     left: 50%;
     margin-left: -30px;
     background-color: #009fed;
-    bottom: 5%;
+    bottom: -10%;
   }
   .bar1 {
     @include barList(3);

@@ -37,10 +37,15 @@
     .commonbg.page-plugin-txt
   .section.page-forward
     .db-center.page-forward-txt
-    - for i in (1..3)
-      div class="cloud cloud#{i}"
     .bar-area
+      - for i in (1..3)
+        div class="cloud cloud#{i}"
       - for i in (1..7)
         div class="bar bar#{i}"
   .section.page-summary
-  .section.page-joinus
+    .db-center.page-summary-txt
+    .logo
+  .section.page-join-us
+    a.dib-center.join-us href="javascript:;"
+      span.normal
+      span.hover
