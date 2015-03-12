@@ -154,7 +154,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: ["deploy/"],
+    clean: ["deploy/*", "!deploy/.git/**"],
     copy: {
       deploy: {
         files: [
