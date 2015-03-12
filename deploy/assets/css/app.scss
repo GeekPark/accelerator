@@ -753,7 +753,90 @@ th {
 
 
 .pc-root .page-forward {
-
+  position: relative;
+  .page-forward-txt {
+    width: (1182px/2);
+    height: (109px/2);
+    background: url(../images/pages/page-forward-txt.png) 0 0 no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: 10px;
+  }
+  .cloud {
+    width: (222px/2);
+    height: (118px/2);
+    background: url(../images/pages/page-forward-txt.png) 0 0 no-repeat;
+    background-position: 0 (-160px/2);
+    background-size: (1182px/2) (274px/2);
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    margin-left: -55.5px;
+    z-index: 5;
+  }
+  .cloud1 {
+    left: 40%;
+    bottom: 5%;
+  }
+  .cloud3 {
+    left:60%;
+    bottom: 10%;
+  }
+  /* .bar-area {
+    position: relative;
+    bottom: 5%;
+  } */
+  @mixin barList($offset) {
+    $w: 60px;
+    $init: -30px;
+    margin-left: $init - $w * $offset;
+  }
+  .bar-area {
+    height: 360px;
+    position: relative;
+  }
+  .bar {
+    width: 60px;
+    position: absolute;
+    float: left;
+    height: 200px;
+    left: 50%;
+    margin-left: -30px;
+    background-color: #009fed;
+    bottom: -10%;
+  }
+  .bar1 {
+    @include barList(3);
+    background-color: #45ced1;
+  }
+  .bar2 {
+    @include barList(2);
+    background-color: #8b6be0;
+    height: 250px;
+  }
+  .bar3 {
+    @include barList(1);
+    background-color: #70bf41;
+    height: 320px;
+  }
+  .bar4 {
+    height: 360px;
+  }
+  .bar5 {
+    @include barList(-1);
+    background-color: #e7c527;
+    height: 290px;
+  }
+  .bar6 {
+    @include barList(-2);
+    background-color: #d7642c;
+    height: 330px;
+  }
+  .bar7 {
+    @include barList(-3);
+    background-color: #c1c947;
+    height: 260px;
+  }
 }
 
 // pc-root class 用于切换背景动画
@@ -786,6 +869,36 @@ th {
 } // .pc-root end
 
 
+.pc-root .page-join-us {
+  .join-us {
+    text-decoration: none;
+    width: (322px/2);
+    height: (91px/2);
+    position: relative;
+    left: -(322px/4);
+    span {
+      background: url(../images/join_us.png) 0 0 no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: 100%;
+      transition: all 0.2s ease;
+      transform: scaleY(1);
+      &.hover {
+        transform: scaleY(0);
+        background-position-y: -50px;
+      }
+    }
+    &:hover {
+      span.normal {
+        transform: scaleY(0);
+      }
+      span.hover {
+        transform: scaleY(1);
+      }
+    }
+  }
+}
 
 .pc-root .page-next {
   .dollar {
@@ -843,14 +956,16 @@ th {
 .pc-root .page-partner {
   .item {
     display: inline-block;
-    width: 70px;
+    width: (129px/2);
     height: (318px/2);
-    background: url(../images/pages/page-partner-person.png) -75px 0 no-repeat;
-    background-size: 140px (318px/2);
+    background: url(../images/pages/page-partner-person.png) -(175px/2) 0 no-repeat;
+    background-size: (304px/2) (318px/2);
     margin: 0 5px;
   }
   .person6 {
-    background-position-x: 7px;
+    width: (124px/2);
+    height: (318px/2);
+    background-position-x: 0px;
   }
   .page-partner-txt {
     width: (936px/2);
@@ -911,6 +1026,15 @@ th {
   }
 }
 
+.pc-root .page-summary {
+  .page-summary-txt {
+    width: (1138px/2);
+    height: (178px/2);
+    background: url(../images/pages/page-summary-txt.png) 0 0 no-repeat;
+    background-size: 100%;
+    margin-bottom: 10%;
+  }
+}
 
 .pc-root .page-time {
   .watch {

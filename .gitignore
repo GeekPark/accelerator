@@ -3,4 +3,5 @@ node_modules/
 *.zip
 .bundle/
 .capistrano/
+deploy/
 

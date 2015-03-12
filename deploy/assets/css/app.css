@@ -659,6 +659,74 @@ th {
     height: 449.5px;
     margin-left: 263.25px; }
 
+.pc-root .page-forward {
+  position: relative;
+  /* .bar-area {
+    position: relative;
+    bottom: 5%;
+  } */ }
+  .pc-root .page-forward .page-forward-txt {
+    width: 591px;
+    height: 54.5px;
+    background: url(../images/pages/page-forward-txt.png) 0 0 no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: 10px; }
+  .pc-root .page-forward .cloud {
+    width: 111px;
+    height: 59px;
+    background: url(../images/pages/page-forward-txt.png) 0 0 no-repeat;
+    background-position: 0 -80px;
+    background-size: 591px 137px;
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    margin-left: -55.5px;
+    z-index: 5; }
+  .pc-root .page-forward .cloud1 {
+    left: 40%;
+    bottom: 5%; }
+  .pc-root .page-forward .cloud3 {
+    left: 60%;
+    bottom: 10%; }
+  .pc-root .page-forward .bar-area {
+    height: 360px;
+    position: relative; }
+  .pc-root .page-forward .bar {
+    width: 60px;
+    position: absolute;
+    float: left;
+    height: 200px;
+    left: 50%;
+    margin-left: -30px;
+    background-color: #009fed;
+    bottom: -10%; }
+  .pc-root .page-forward .bar1 {
+    margin-left: -210px;
+    background-color: #45ced1; }
+  .pc-root .page-forward .bar2 {
+    margin-left: -150px;
+    background-color: #8b6be0;
+    height: 250px; }
+  .pc-root .page-forward .bar3 {
+    margin-left: -90px;
+    background-color: #70bf41;
+    height: 320px; }
+  .pc-root .page-forward .bar4 {
+    height: 360px; }
+  .pc-root .page-forward .bar5 {
+    margin-left: 30px;
+    background-color: #e7c527;
+    height: 290px; }
+  .pc-root .page-forward .bar6 {
+    margin-left: 90px;
+    background-color: #d7642c;
+    height: 330px; }
+  .pc-root .page-forward .bar7 {
+    margin-left: 150px;
+    background-color: #c1c947;
+    height: 260px; }
+
 .pc-root .page-home {
   position: relative; }
   .pc-root .page-home .txt {
@@ -681,6 +749,37 @@ th {
             animation: flipBottom 1s linear infinite;
     -webkit-animation-direction: alternate;
             animation-direction: alternate; }
+
+.pc-root .page-join-us .join-us {
+  text-decoration: none;
+  width: 161px;
+  height: 45.5px;
+  position: relative;
+  left: -80.5px; }
+  .pc-root .page-join-us .join-us span {
+    background: url(../images/join_us.png) 0 0 no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 100%;
+    -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+    -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+            transform: scaleY(1); }
+    .pc-root .page-join-us .join-us span.hover {
+      -webkit-transform: scaleY(0);
+          -ms-transform: scaleY(0);
+              transform: scaleY(0);
+      background-position-y: -50px; }
+  .pc-root .page-join-us .join-us:hover span.normal {
+    -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+            transform: scaleY(0); }
+  .pc-root .page-join-us .join-us:hover span.hover {
+    -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+            transform: scaleY(1); }
 
 .pc-root .page-next .dollar {
   width: 485px;
@@ -727,13 +826,15 @@ th {
 
 .pc-root .page-partner .item {
   display: inline-block;
-  width: 70px;
+  width: 64.5px;
   height: 159px;
-  background: url(../images/pages/page-partner-person.png) -75px 0 no-repeat;
-  background-size: 140px 159px;
+  background: url(../images/pages/page-partner-person.png)-87.5px 0 no-repeat;
+  background-size: 152px 159px;
   margin: 0 5px; }
 .pc-root .page-partner .person6 {
-  background-position-x: 7px; }
+  width: 62px;
+  height: 159px;
+  background-position-x: 0px; }
 .pc-root .page-partner .page-partner-txt {
   width: 468px;
   height: 92px;
@@ -771,6 +872,13 @@ th {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%; }
+
+.pc-root .page-summary .page-summary-txt {
+  width: 569px;
+  height: 89px;
+  background: url(../images/pages/page-summary-txt.png) 0 0 no-repeat;
+  background-size: 100%;
+  margin-bottom: 10%; }
 
 .pc-root .page-time .watch {
   width: 570px;
