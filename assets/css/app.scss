@@ -675,20 +675,107 @@ th {
   50%{transform: translateY(10px);opacity: 0.5;}
   100%{transform: translateY(0px);opacity: 1;}
 }
+.anim-item {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.section.active {
+  .slidedown {
+    opacity: 0;
+    animation: slidedown 1s ease;
+    transition: all 1s ease;
+    animation-fill-mode: forwards;
+  }
+  .slideup  {
+    opacity: 0;
+    animation: slideup 1s ease;
+    transition: all 1s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 
 .pc-root {
-  .circle {
-    width: 75px;
-    height: 75px;
-    background: url(../images/circle.png) 0 0 no-repeat;
-    background-size: 100%;
+  .page-attention {
+    position: relative;
+    .circle {
+      width: 75px;
+      height: 75px;
+      background: url(../images/circle.png) 0 0 no-repeat;
+      background-size: 100%;
+    }
+    .page-attention-txt {
+      width: 450px;
+      height: 93px;
+      background: url(../images/pages/page-attention-txt.png) 0 0 no-repeat;
+      background-size: 100%;
+      margin-top: 5%;
+    }
+    .circlebg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: 100% auto;
+      background-position: center;
+      top: 0;
+      left: 0;
+      &.outside {
+        background-image: url(../images/pages/dotbg1.png);
+      }
+      &.centre {
+        background-image: url(../images/pages/dotbg-centre.png);
+      }
+    }
   }
-  .page-attention-txt {
-    width: 450px;
-    height: 93px;
-    background: url(../images/pages/page-attention-txt.png) 0 0 no-repeat;
-    background-size: 100%;
-    margin-top: 5%;
+}
+.pc-root .section.active {
+  .circle,.page-atten-txt {
+    opacity: 0;
+  }
+  .circlebg.centre {
+    animation: centre 0.8s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes opacityShow {
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes centre {
+  to {
+    opacity: 0;
   }
 }
 
@@ -748,9 +835,67 @@ th {
         @include zoomBg(2, -1);
       }
     }
+
+    // animation area
+
+
+
   } //.page-home end
 } // .pc-root end
 
+.pc-root .section.active.page-commun{
+  .big-bubble {
+    @mixin bubbleAnim ($animName){
+      animation: $animName 1.5s ease;
+      animation-fill-mode: forwards;
+    }
+    .item1 {
+      @include bubbleAnim(bubble1);
+    }
+    .item2 {
+      @include bubbleAnim(bubble2);
+    }
+    .item3 {
+      @include bubbleAnim(bubble3);
+    }
+    .item4 {
+      @include bubbleAnim(bubble4);
+    }
+    .item5 {
+      @include bubbleAnim(bubble5);
+    }
+    .item {
+    }
+  }
+}
+
+@mixin bubbleAnim($bottom, $xOffset) {
+  0% {
+    bottom: $bottom;
+    transform: translateX($xOffset);
+  }
+  100% {
+    bottom: -200;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes bubble1 {
+  @include bubbleAnim(30%, 50%);
+}
+
+@keyframes bubble2 {
+  @include bubbleAnim(30%, 0);
+}
+@keyframes bubble3 {
+  @include bubbleAnim(30%, 0);
+}
+@keyframes bubble4 {
+  @include bubbleAnim(30%, 0);
+}
+@keyframes bubble5 {
+  @include bubbleAnim(30%, -50%);
+}
 
 .pc-root .page-forward {
   position: relative;
@@ -775,17 +920,13 @@ th {
     z-index: 5;
   }
   .cloud1 {
-    left: 40%;
     bottom: 5%;
+    margin-left: -180px;
   }
   .cloud3 {
-    left:60%;
     bottom: 10%;
+    margin-left: 85px;
   }
-  /* .bar-area {
-    position: relative;
-    bottom: 5%;
-  } */
   @mixin barList($offset) {
     $w: 60px;
     $init: -30px;
@@ -794,12 +935,12 @@ th {
   .bar-area {
     height: 360px;
     position: relative;
+    overflow: hidden;
   }
   .bar {
     width: 60px;
     position: absolute;
     float: left;
-    height: 200px;
     left: 50%;
     margin-left: -30px;
     background-color: #009fed;
@@ -808,6 +949,7 @@ th {
   .bar1 {
     @include barList(3);
     background-color: #45ced1;
+    height: 200px;
   }
   .bar2 {
     @include barList(2);
@@ -839,6 +981,38 @@ th {
   }
 }
 
+.pc-root .page-forward.active {
+  .bar {
+    animation: barlist 1s ease;
+  }
+  .page-forward-txt {
+    opacity: 0;
+    animation: forwardTxt 0.5s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes barlist {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes forwardTxt {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 // pc-root class 用于切换背景动画
 
 .pc-root {
@@ -855,8 +1029,9 @@ th {
       display: inline-block;
       background: url(../images/arrow.png) center center no-repeat;
       background-size: 100%;
-      width: 59px;
-      height: 57px;
+      $zoom: 0.6;
+      width: (59px * $zoom);
+      height: (57px * $zoom);
       position: absolute;
       left: 50%;
       bottom: 10%;
@@ -951,6 +1126,50 @@ th {
     background: url(../images/pages/page-next-txt.png) 0 0 no-repeat;
     background-size: 100%;
   }
+
+  &.active {
+    .page-next-main {
+      opacity: 0;
+      animation: opShow 1s ease;
+      animation-delay: 3.5s;
+      animation-fill-mode: forwards;
+    }
+    .dollar {
+      position: relative;
+      right: -236px;
+      animation: dollarMoveLeft 0.5s ease;
+      animation-delay: 3s;
+      animation-fill-mode: forwards;
+      .item {
+        transform: scale(0);
+        animation: dollarZoom 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+      }
+      .section2 {
+        animation-delay: 1.05s;
+      }
+      .section3 {
+        animation-delay: 1.1s;
+      }
+    }
+  }
+}
+
+
+@keyframes dollarZoom {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes dollarMoveLeft {
+  from { }
+  to { right: 0; }
+}
+
+@keyframes opShow {
+  from { }
+  to { opacity: 1; }
 }
 
 .pc-root .page-partner {
@@ -973,6 +1192,60 @@ th {
     background: url(../images/pages/page-partner-txt.png) 0 0 no-repeat;
     background-size: 100%;
     margin-top: 5%;
+  }
+}
+
+.pc-root .page-partner.active {
+  .item {
+    opacity: 0;
+    animation: personShow 0.5s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  .page-partner-txt {
+    opacity: 0;
+    animation: slideupPartner 0.5s ease;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  .person6 {
+    opacity: 1;
+  }
+  $delay: 0.2s;
+  .person5,.person7 {
+    animation-delay: (1 * $delay + 1s);
+  }
+  .person4,.person8 {
+    animation-delay: (2 * $delay + 1s);
+  }
+  .person3,.person9 {
+    animation-delay: (3 * $delay + 1s);
+  }
+  .person2,.person10 {
+    animation-delay: (4 * $delay + 1s);
+  }
+  .person1,.person11 {
+    animation-delay: (5 * $delay + 1s);
+  }
+
+}
+
+@keyframes personShow {
+  0% {
+
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideupPartner {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1023,6 +1296,70 @@ th {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+    opacity: 0;
+  }
+}
+
+.pc-root .page-plugin.active {
+  .plus {
+    animation: pluginPlus 1s ease-in-out;
+    animation-delay: 1s;
+  }
+  .gicon,.underline {
+    opacity: 0;
+    animation: pluginGicon 0.8s ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+  .underline {
+    animation-name: pluginUnderline;
+  }
+  .page-plugin-txt {
+    opacity: 0;
+    animation: pluginTxt 0.8s ease;
+    animation-delay: 2.8s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes pluginPlus{
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(2turn);
+  }
+}
+
+@keyframes pluginGicon {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pluginUnderline {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pluginTxt {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1036,7 +1373,26 @@ th {
   }
 }
 
+/* .page-summary.active {
+  .page-summary-txt,.logo {
+    animation: summaryTxt 0.5s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }} */
+
+@keyframes summaryTxt {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
 .pc-root .page-time {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
   .watch {
     $size: 1140px;
     width: $size/2;
@@ -1045,19 +1401,118 @@ th {
     background-size: 100%;
     display: inline-block;
     vertical-align: middle;
-    position: relative;
-    left: -100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -$size/4;
+    margin-left: -100px;
   }
   .page-time-txt {
     display: inline-block;
     vertical-align: middle;
-    position: relative;
-    right: -100px;
+    position: absolute;
     z-index: 5;
     width: (1286px/2);
     height: (74px/2);
     background: url(../images/pages/page-time-txt.png) center center no-repeat #EEF1F5;
     background-size: 100%;
     padding: 15px;
+    left: 50%;
+    margin-left: -550px;
+    top: 50%;
+    margin-top: -(74px/4) - 15px;
+  }
+  .bg-watch {
+    $size: 1140px;
+    .bg {
+      width: $size/2;
+      height: $size/2;
+      background: url(../images/pages/watch.png) 0 0 no-repeat;
+      background-size: 100%;
+      opacity: 0;
+      position: absolute;
+    }
+    .first-watch {
+      top: 50%;
+      margin-top: -($size/4);
+      left: 50%;
+      margin-left: -($size/4);
+    }
+    .blur-watch {
+      background-image: url(../images/pages/blur-watch.png);
+      top: 100%;
+      left: 0;
+      width: $size/1.5;
+      height: $size/1.5;
+    }
+    .small-watch {
+      background-image: url(../images/pages/blur-watch.png);
+      right: 5%;
+      width: $size/5;
+      height: $size/5;
+      top: 100%;
+    }
+  }
+}
+
+.pc-root .page-time.active {
+  .watch {
+    top: 200%;
+    animation: mainWatch 1.2s ease;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+  }
+  .page-time-txt {
+    opacity: 0;
+    animation: timeTxt 0.3s ease;
+    animation-delay: 2.8s;
+    animation-fill-mode: forwards;
+  }
+  .first-watch {
+    opacity: 1;
+    animation: firstWatch 1.8s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  .blur-watch {
+    opacity: 1;
+    animation: blurWatch 1.8s ease;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+  }
+  .small-watch {
+    opacity: 1;
+    animation: firstWatch 2s ease;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes firstWatch {
+  100% {
+    top: -600px;
+  }
+}
+
+@keyframes blurWatch {
+  100% {
+    top: -1000px;
+  }
+}
+
+@keyframes mainWatch {
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes timeTxt {
+  0% {
+    opacity: 1;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
