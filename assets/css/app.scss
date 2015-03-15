@@ -624,7 +624,22 @@ th {
   margin-left: auto;
   margin-right: auto;
 }
-
+.shadow-container {
+  position: relative;
+  display: inline-block;
+  .shadow {
+    position: relative;
+    z-index: 5;
+  }
+  .shadow-bg {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 .pc-root {
   .section {
     background-size: 100% 100%;
@@ -717,6 +732,25 @@ th {
   }
 }
 
+@mixin shadowShow($delay) {
+  opacity: 0;
+  animation: shadowShow 0.5s ease;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shadowShow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left top;
+  }
+  to {
+    opacity: .4;
+    transform: scale(1);
+  }
+}
+
 .pc-root {
   .page-attention {
     position: relative;
@@ -748,6 +782,14 @@ th {
         background-image: url(../images/pages/dotbg-centre.png);
       }
     }
+    .shadow-bg {
+      width: 162px;
+      height: 158px;
+      top: 6px;
+      left: 4px;
+      background: url(../images/shadow/s2.png) 0 0 no-repeat;
+      opacity: 0;
+    }
   }
 }
 .pc-root .section.active {
@@ -758,6 +800,10 @@ th {
     animation: centre 0.8s ease;
     animation-delay: 1s;
     animation-fill-mode: forwards;
+  }
+  .shadow-bg {
+    opacity: 1;
+    @include shadowShow(3.3s);
   }
 }
 
@@ -791,6 +837,12 @@ th {
       background-size: 100%;
       margin-left: auto;
       margin-right: auto;
+    }
+    .shadow-bg {
+      background-image: url(../images/shadow/s1.png);
+      width: 180px;
+      height: 183px;
+      opacity: 0;
     }
     .page-commun-txt {
       width: (667px/2);
@@ -838,12 +890,13 @@ th {
 
     // animation area
 
-
-
   } //.page-home end
 } // .pc-root end
 
 .pc-root .section.active.page-commun{
+  .shadow-bg {
+    @include shadowShow(1.8s);
+  }
   .big-bubble {
     @mixin bubbleAnim ($animName){
       animation: $animName 1.5s ease;
@@ -897,6 +950,7 @@ th {
   @include bubbleAnim(30%, -50%);
 }
 
+
 .pc-root .page-forward {
   position: relative;
   .page-forward-txt {
@@ -933,7 +987,7 @@ th {
     margin-left: $init - $w * $offset;
   }
   .bar-area {
-    height: 360px;
+    height: 400px;
     position: relative;
     overflow: hidden;
   }
@@ -944,52 +998,55 @@ th {
     left: 50%;
     margin-left: -30px;
     background-color: #009fed;
-    bottom: -10%;
+    bottom: -15%;
   }
   .bar1 {
     @include barList(3);
     background-color: #45ced1;
-    height: 200px;
+    height: 260px;
   }
   .bar2 {
     @include barList(2);
     background-color: #8b6be0;
-    height: 250px;
+    height: 310px;
   }
   .bar3 {
     @include barList(1);
     background-color: #70bf41;
-    height: 320px;
+    height: 365px;
   }
   .bar4 {
-    height: 360px;
+    height: 400px;
   }
   .bar5 {
     @include barList(-1);
     background-color: #e7c527;
-    height: 290px;
+    height: 345px;
   }
   .bar6 {
     @include barList(-2);
     background-color: #d7642c;
-    height: 330px;
+    height: 360px;
   }
   .bar7 {
     @include barList(-3);
     background-color: #c1c947;
-    height: 260px;
+    height: 280px;
   }
 }
 
 .pc-root .page-forward.active {
   .bar {
-    animation: barlist 1s ease;
+    animation: barlist 1.2s ease;
   }
-  .page-forward-txt {
+  .page-forward-txt,.cloud {
     opacity: 0;
     animation: forwardTxt 0.5s ease;
     animation-fill-mode: forwards;
     animation-delay: 1s;
+  }
+  .cloud {
+    animation-delay: 0.8s;
   }
 }
 
@@ -1043,37 +1100,6 @@ th {
   } //.page-home end
 } // .pc-root end
 
-
-.pc-root .page-join-us {
-  .join-us {
-    text-decoration: none;
-    width: (322px/2);
-    height: (91px/2);
-    position: relative;
-    left: -(322px/4);
-    span {
-      background: url(../images/join_us.png) 0 0 no-repeat;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background-size: 100%;
-      transition: all 0.2s ease;
-      transform: scaleY(1);
-      &.hover {
-        transform: scaleY(0);
-        background-position-y: -50px;
-      }
-    }
-    &:hover {
-      span.normal {
-        transform: scaleY(0);
-      }
-      span.hover {
-        transform: scaleY(1);
-      }
-    }
-  }
-}
 
 .pc-root .page-next {
   .dollar {
@@ -1154,6 +1180,14 @@ th {
       }
     }
   }
+  .shadow-bg {
+    background-image: url(../images/shadow/s3.png);
+    width: 185px;
+    height: 184px;
+    left: 2px;
+    top: 2px;
+    @include shadowShow(6s);
+  }
 }
 
 
@@ -1227,7 +1261,14 @@ th {
   .person1,.person11 {
     animation-delay: (5 * $delay + 1s);
   }
-
+  .shadow-bg {
+    background-image: url(../images/shadow/s4.png);
+    width: 211px;
+    height: 279px;
+    left: 5px;
+    top: 2px;
+    @include shadowShow(3s);
+  }
 }
 
 @keyframes personShow {
@@ -1320,6 +1361,14 @@ th {
     animation-delay: 2.8s;
     animation-fill-mode: forwards;
   }
+  .shadow-bg {
+    background-image: url(../images/shadow/s6.png);
+    width: 291px;
+    height: 290px;
+    left: 1px;
+    top: 1px;
+    @include shadowShow(3.6s);
+  }
 }
 
 @keyframes pluginPlus{
@@ -1369,7 +1418,41 @@ th {
     height: (178px/2);
     background: url(../images/pages/page-summary-txt.png) 0 0 no-repeat;
     background-size: 100%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
+  }
+  .join-us {
+    text-decoration: none;
+    width: (322px/2);
+    height: (91px/2);
+    position: relative;
+    left: -(322px/4);
+    margin-bottom: 7%;
+    span {
+      background: url(../images/join_us.png) 0 0 no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: 100%;
+      transition: all 0.2s ease;
+      transform: scaleY(1);
+      &.hover {
+        transform: scaleY(0);
+        background-position-y: -50px;
+      }
+    }
+    &:hover {
+      span.normal {
+        transform: scaleY(0);
+      }
+      span.hover {
+        transform: scaleY(1);
+      }
+    }
+  }
+  .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
