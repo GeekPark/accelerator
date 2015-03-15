@@ -9,7 +9,22 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+.shadow-container {
+  position: relative;
+  display: inline-block;
+  .shadow {
+    position: relative;
+    z-index: 5;
+  }
+  .shadow-bg {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 .pc-root {
   .section {
     background-size: 100% 100%;
@@ -59,4 +74,64 @@
   0%{transform: translateY(20px);opacity: 0;}
   50%{transform: translateY(10px);opacity: 0.5;}
   100%{transform: translateY(0px);opacity: 1;}
+}
+.anim-item {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.section.active {
+  .slidedown {
+    opacity: 0;
+    animation: slidedown 1s ease;
+    transition: all 1s ease;
+    animation-fill-mode: forwards;
+  }
+  .slideup  {
+    opacity: 0;
+    animation: slideup 1s ease;
+    transition: all 1s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@mixin shadowShow($delay) {
+  opacity: 0;
+  animation: shadowShow 0.5s ease;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shadowShow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left top;
+  }
+  to {
+    opacity: .4;
+    transform: scale(1);
+  }
 }

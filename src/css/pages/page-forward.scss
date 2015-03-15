@@ -21,66 +21,98 @@
     z-index: 5;
   }
   .cloud1 {
-    left: 40%;
     bottom: 5%;
+    margin-left: -180px;
   }
   .cloud3 {
-    left:60%;
     bottom: 10%;
+    margin-left: 85px;
   }
-  /* .bar-area {
-    position: relative;
-    bottom: 5%;
-  } */
   @mixin barList($offset) {
     $w: 60px;
     $init: -30px;
     margin-left: $init - $w * $offset;
   }
   .bar-area {
-    height: 360px;
+    height: 400px;
     position: relative;
+    overflow: hidden;
   }
   .bar {
     width: 60px;
     position: absolute;
     float: left;
-    height: 200px;
     left: 50%;
     margin-left: -30px;
     background-color: #009fed;
-    bottom: -10%;
+    bottom: -15%;
   }
   .bar1 {
     @include barList(3);
     background-color: #45ced1;
+    height: 260px;
   }
   .bar2 {
     @include barList(2);
     background-color: #8b6be0;
-    height: 250px;
+    height: 310px;
   }
   .bar3 {
     @include barList(1);
     background-color: #70bf41;
-    height: 320px;
+    height: 365px;
   }
   .bar4 {
-    height: 360px;
+    height: 400px;
   }
   .bar5 {
     @include barList(-1);
     background-color: #e7c527;
-    height: 290px;
+    height: 345px;
   }
   .bar6 {
     @include barList(-2);
     background-color: #d7642c;
-    height: 330px;
+    height: 360px;
   }
   .bar7 {
     @include barList(-3);
     background-color: #c1c947;
-    height: 260px;
+    height: 280px;
   }
 }
+
+.pc-root .page-forward.active {
+  .bar {
+    animation: barlist 1.2s ease;
+  }
+  .page-forward-txt,.cloud {
+    opacity: 0;
+    animation: forwardTxt 0.5s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+  .cloud {
+    animation-delay: 0.8s;
+  }
+}
+
+@keyframes barlist {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes forwardTxt {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

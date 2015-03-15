@@ -1,51 +1,60 @@
 #fullpage
-  .section.active.page-home
-    a.logo href= "//geekpark.net" target="_blank"
-    .txt
+  section.section.active.page-home
+    a.logo.slidedown.anim-item href= "//geekpark.net" target="_blank" data-order="0.5"
+    .txt.slideup.anim-item data-order="1"
     .arrow-tip
-  .section.page-commun
-    .bubble
-    .page-commun-txt
+  section.section.page-commun
+    .bubble.slideup.anim-item.shadow data-order="1"
+    .page-commun-txt.slideup.anim-item data-order="1"
     .big-bubble
       .item.item1
       .item.item2
       .item.item3
       .item.item4
       .item.item5
-  .section.page-attention
-    .dib-center.circle
-    .db-center.page-attention-txt
-  .section.page-next
+  section.section.page-attention
+    .circlebg.outside
+    .circlebg.centre
+    .dib-center.shadow.anim-item.slideup.circle data-order="2"
+    .db-center.anim-item.slideup.page-attention-txt data-order="2.5"
+    style#random-circle
+  section.section.page-next
     .dollar
       .item.section1
       .item.section2
       .item.section3
     .page-next-main
-      .page-next-puzzle
+      .page-next-puzzle.shadow
       .page-next-txt
-  .section.page-partner
+  section.section.page-partner
     - for i in (1..11)
-      div class="item person#{i}"
+      - if i == 6
+        div class="item person#{i} shadow"
+      - else
+        div class="item person#{i}"
     .db-center.page-partner-txt
-  .section.page-time
+  section.section.page-time
+    .bg-watch
+      .bg.first-watch
+      .bg.blur-watch
+      .bg.small-watch
     .page-time-txt
     .watch
-  .section.page-plugin
+  section.section.page-plugin
     .commonbg.underline
     .commonbg.plus
-    .commonbg.gicon
+    .commonbg.gicon.shadow
     .commonbg.page-plugin-txt
-  .section.page-forward
+  section.section.page-forward
     .db-center.page-forward-txt
     .bar-area
       - for i in (1..3)
         div class="cloud cloud#{i}"
       - for i in (1..7)
         div class="bar bar#{i}"
-  .section.page-summary
+  section.section.page-summary
     .db-center.page-summary-txt
-    .logo
-  .section.page-join-us
-    a.dib-center.join-us href="javascript:;"
+    a.dib-center.join-us href="http://www.mikecrm.com/f.php?t=ZMklgL"
       span.normal
       span.hover
+    .logo.db-center

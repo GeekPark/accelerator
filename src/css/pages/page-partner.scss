@@ -20,3 +20,64 @@
     margin-top: 5%;
   }
 }
+
+.pc-root .page-partner.active {
+  .item {
+    opacity: 0;
+    animation: personShow 0.5s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  .page-partner-txt {
+    opacity: 0;
+    animation: slideupPartner 0.5s ease;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  .person6 {
+    opacity: 1;
+  }
+  $delay: 0.2s;
+  .person5,.person7 {
+    animation-delay: (1 * $delay + 1s);
+  }
+  .person4,.person8 {
+    animation-delay: (2 * $delay + 1s);
+  }
+  .person3,.person9 {
+    animation-delay: (3 * $delay + 1s);
+  }
+  .person2,.person10 {
+    animation-delay: (4 * $delay + 1s);
+  }
+  .person1,.person11 {
+    animation-delay: (5 * $delay + 1s);
+  }
+  .shadow-bg {
+    background-image: url(../images/shadow/s4.png);
+    width: 211px;
+    height: 279px;
+    left: 5px;
+    top: 2px;
+    @include shadowShow(3s);
+  }
+}
+
+@keyframes personShow {
+  0% {
+
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideupPartner {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

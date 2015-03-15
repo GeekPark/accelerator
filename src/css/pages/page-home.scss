@@ -14,8 +14,9 @@
       display: inline-block;
       background: url(../images/arrow.png) center center no-repeat;
       background-size: 100%;
-      width: 59px;
-      height: 57px;
+      $zoom: 0.6;
+      width: (59px * $zoom);
+      height: (57px * $zoom);
       position: absolute;
       left: 50%;
       bottom: 10%;

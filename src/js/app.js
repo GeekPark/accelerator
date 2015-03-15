@@ -9,6 +9,7 @@ $(function() {
       $pcRoot = $('#pc-root'),
       $mobileRoot = $('#mobile-root');
 
+  // PC js
   if(pageW > mobileW) {
     var templateURL = $pcRoot.data('url');
     GeekPark.loadTemplate(templateURL, function(data) {
@@ -24,10 +25,32 @@ $(function() {
         }
       });
 
-      // $.fn.fullpage.moveTo(5);
+      // $.fn.fullpage.moveTo(7);
+
+      pcJS();
     });
   }
 
 
+  function pcJS () {
+    // page animation delay
+    $pcRoot.find('section.section .anim-item').each(function() {
+      var order = $(this).data('order');
+      $(this).css({
+        "transition-delay": order + 's',
+        "animation-delay": order + 's'
+      });
+    });
+
+
+    $pcRoot.find('.shadow').each(function() {
+      var $container = $(document.createElement('div'));
+      $(this).before($container);
+      $container.addClass('shadow-container');
+      $(this).appendTo($container);
+      $container.append('<div class="shadow-bg"></div>');
+    });
+  }
 
 });// jQuery read end
+

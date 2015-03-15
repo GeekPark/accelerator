@@ -1,4 +1,7 @@
 .pc-root .page-time {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
   .watch {
     $size: 1140px;
     width: $size/2;
@@ -7,19 +10,118 @@
     background-size: 100%;
     display: inline-block;
     vertical-align: middle;
-    position: relative;
-    left: -100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -$size/4;
+    margin-left: -100px;
   }
   .page-time-txt {
     display: inline-block;
     vertical-align: middle;
-    position: relative;
-    right: -100px;
+    position: absolute;
     z-index: 5;
     width: (1286px/2);
     height: (74px/2);
     background: url(../images/pages/page-time-txt.png) center center no-repeat #EEF1F5;
     background-size: 100%;
     padding: 15px;
+    left: 50%;
+    margin-left: -550px;
+    top: 50%;
+    margin-top: -(74px/4) - 15px;
+  }
+  .bg-watch {
+    $size: 1140px;
+    .bg {
+      width: $size/2;
+      height: $size/2;
+      background: url(../images/pages/watch.png) 0 0 no-repeat;
+      background-size: 100%;
+      opacity: 0;
+      position: absolute;
+    }
+    .first-watch {
+      top: 50%;
+      margin-top: -($size/4);
+      left: 50%;
+      margin-left: -($size/4);
+    }
+    .blur-watch {
+      background-image: url(../images/pages/blur-watch.png);
+      top: 100%;
+      left: 0;
+      width: $size/1.5;
+      height: $size/1.5;
+    }
+    .small-watch {
+      background-image: url(../images/pages/blur-watch.png);
+      right: 5%;
+      width: $size/5;
+      height: $size/5;
+      top: 100%;
+    }
+  }
+}
+
+.pc-root .page-time.active {
+  .watch {
+    top: 200%;
+    animation: mainWatch 1.2s ease;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+  }
+  .page-time-txt {
+    opacity: 0;
+    animation: timeTxt 0.3s ease;
+    animation-delay: 2.8s;
+    animation-fill-mode: forwards;
+  }
+  .first-watch {
+    opacity: 1;
+    animation: firstWatch 1.8s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  .blur-watch {
+    opacity: 1;
+    animation: blurWatch 1.8s ease;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+  }
+  .small-watch {
+    opacity: 1;
+    animation: firstWatch 2s ease;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes firstWatch {
+  100% {
+    top: -600px;
+  }
+}
+
+@keyframes blurWatch {
+  100% {
+    top: -1000px;
+  }
+}
+
+@keyframes mainWatch {
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes timeTxt {
+  0% {
+    opacity: 1;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }

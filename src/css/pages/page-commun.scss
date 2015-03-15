@@ -11,6 +11,12 @@
       margin-left: auto;
       margin-right: auto;
     }
+    .shadow-bg {
+      background-image: url(../images/shadow/s1.png);
+      width: 180px;
+      height: 183px;
+      opacity: 0;
+    }
     .page-commun-txt {
       width: (667px/2);
       height: (194px/2);
@@ -54,6 +60,66 @@
         @include zoomBg(2, -1);
       }
     }
+
+    // animation area
+
   } //.page-home end
 } // .pc-root end
+
+.pc-root .section.active.page-commun{
+  .shadow-bg {
+    @include shadowShow(1.8s);
+  }
+  .big-bubble {
+    @mixin bubbleAnim ($animName){
+      animation: $animName 1.5s ease;
+      animation-fill-mode: forwards;
+    }
+    .item1 {
+      @include bubbleAnim(bubble1);
+    }
+    .item2 {
+      @include bubbleAnim(bubble2);
+    }
+    .item3 {
+      @include bubbleAnim(bubble3);
+    }
+    .item4 {
+      @include bubbleAnim(bubble4);
+    }
+    .item5 {
+      @include bubbleAnim(bubble5);
+    }
+    .item {
+    }
+  }
+}
+
+@mixin bubbleAnim($bottom, $xOffset) {
+  0% {
+    bottom: $bottom;
+    transform: translateX($xOffset);
+  }
+  100% {
+    bottom: -200;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes bubble1 {
+  @include bubbleAnim(30%, 50%);
+}
+
+@keyframes bubble2 {
+  @include bubbleAnim(30%, 0);
+}
+@keyframes bubble3 {
+  @include bubbleAnim(30%, 0);
+}
+@keyframes bubble4 {
+  @include bubbleAnim(30%, 0);
+}
+@keyframes bubble5 {
+  @include bubbleAnim(30%, -50%);
+}
 
