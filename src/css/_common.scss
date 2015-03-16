@@ -25,7 +25,7 @@
     height: 100%;
   }
 }
-.pc-root {
+.pc-root,.mobile-root {
   .section {
     background-size: 100% 100%;
     background-position: center center;
@@ -66,6 +66,17 @@
     background-size: 100% 100%;
     display: inline-block;
     background-image: url(../images/logo.png);
+  }
+}
+
+.mobile-root {
+  .section img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .page-home {
+    background: transparent;
   }
 }
 

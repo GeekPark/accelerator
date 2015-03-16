@@ -57,3 +57,24 @@
     transform: scaleY(1);
   }
 }
+
+.mobile-root {
+  .summary {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 40px;
+    max-width: 80%;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .join-us {
+    text-decoration: none;
+    background: url(../images/join_us.png) 0 0 no-repeat;
+    background-size: 100%;
+    width: (322px/2);
+    height: (91px/2);
+    margin-bottom: 10%;
+  }
+
+}

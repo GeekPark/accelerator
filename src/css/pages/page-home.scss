@@ -10,21 +10,35 @@
       background-size: auto 100%;
       margin-bottom: 10%;
     }
-    .arrow-tip {
-      display: inline-block;
-      background: url(../images/arrow.png) center center no-repeat;
-      background-size: 100%;
-      $zoom: 0.6;
-      width: (59px * $zoom);
-      height: (57px * $zoom);
-      position: absolute;
-      left: 50%;
-      bottom: 10%;
-      margin-left: -30px;
-      animation: flipBottom 1s linear infinite;
-      animation-direction:alternate;
-    }
 
   } //.page-home end
 } // .pc-root end
 
+.mobile-root .page-home{
+  background-color: #009fed;
+  color: #fff;
+  .title {
+    margin-bottom: 20%;
+  }
+}
+
+
+.pc-root,.mobile-root {
+  .arrow-tip {
+    display: inline-block;
+    background: url(../images/arrow.png) center center no-repeat;
+    background-size: 100%;
+    $zoom: 0.6;
+    width: (59px * $zoom);
+    height: (57px * $zoom);
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    margin-left: -30px;
+    animation: flipBottom 1s linear infinite;
+    animation-direction:alternate;
+  }
+}
+.mobile-root .arrow-tip{
+  margin-left: -(59px*0.6/2);
+}

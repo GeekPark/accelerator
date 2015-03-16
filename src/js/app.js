@@ -18,16 +18,22 @@ $(function() {
 
       // fullpage
       $pcRoot.find('#fullpage').fullpage({
-        navigation: true,
-        onLeave: function(index, nextIndex, direction) {
-          var nowPage = $pcRoot.find('.section').eq(index).data('name');
-          $pcRoot.find('#fullpage').addClass(nowPage);
-        }
+        navigation: true
       });
 
       // $.fn.fullpage.moveTo(7);
 
       pcJS();
+    });
+  } else {
+    var templateURL = $mobileRoot.data('url');
+    GeekPark.loadTemplate(templateURL, function(data) {
+      $mobileRoot.html(data);
+
+      $mobileRoot.find('#fullpage').fullpage({
+        navigation: true
+      });
+
     });
   }
 

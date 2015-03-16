@@ -560,32 +560,38 @@ th {
     width: 100%;
     height: 100%; }
 
-.pc-root .section {
+.pc-root .section, .mobile-root .section {
   background-size: 100% 100%;
   background-position: center center;
   background-color: #fff;
   background-repeat: no-repeat;
   background-image: none;
   text-align: center; }
-.pc-root .page-home {
+.pc-root .page-home, .mobile-root .page-home {
   background-size: 100% 100%;
   background-image: url(../images/pages/bg-home.jpg); }
-.pc-root .page-commun, .pc-root .page-summary {
+.pc-root .page-commun, .pc-root .page-summary, .mobile-root .page-commun, .mobile-root .page-summary {
   background-color: #009fed; }
-.pc-root .page-attention {
+.pc-root .page-attention, .mobile-root .page-attention {
   background-color: #42af5c; }
-.pc-root .page-next {
+.pc-root .page-next, .mobile-root .page-next {
   background-color: #e8b400; }
-.pc-root .page-partner {
+.pc-root .page-partner, .mobile-root .page-partner {
   background-color: #923ab8; }
-.pc-root .page-time, .pc-root .page-plugin, .pc-root .page-forward, .pc-root .page-joinus {
+.pc-root .page-time, .pc-root .page-plugin, .pc-root .page-forward, .pc-root .page-joinus, .mobile-root .page-time, .mobile-root .page-plugin, .mobile-root .page-forward, .mobile-root .page-joinus {
   background-color: #eef1f5; }
-.pc-root .logo {
+.pc-root .logo, .mobile-root .logo {
   width: 172px;
   height: 34px;
   background-size: 100% 100%;
   display: inline-block;
   background-image: url(../images/logo.png); }
+
+.mobile-root .section img {
+  max-width: 100%;
+  max-height: 100%; }
+.mobile-root .page-home {
+  background: transparent; }
 
 @-webkit-keyframes flipBottom {
   0% {
@@ -1070,20 +1076,30 @@ th {
     background: url(../images/pages/page-home-txt.png) center center no-repeat;
     background-size: auto 100%;
     margin-bottom: 10%; }
-  .pc-root .page-home .arrow-tip {
-    display: inline-block;
-    background: url(../images/arrow.png) center center no-repeat;
-    background-size: 100%;
-    width: 35.4px;
-    height: 34.2px;
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    margin-left: -30px;
-    -webkit-animation: flipBottom 1s linear infinite;
-            animation: flipBottom 1s linear infinite;
-    -webkit-animation-direction: alternate;
-            animation-direction: alternate; }
+
+.mobile-root .page-home {
+  background-color: #009fed;
+  color: #fff; }
+  .mobile-root .page-home .title {
+    margin-bottom: 20%; }
+
+.pc-root .arrow-tip, .mobile-root .arrow-tip {
+  display: inline-block;
+  background: url(../images/arrow.png) center center no-repeat;
+  background-size: 100%;
+  width: 35.4px;
+  height: 34.2px;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  margin-left: -30px;
+  -webkit-animation: flipBottom 1s linear infinite;
+          animation: flipBottom 1s linear infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate; }
+
+.mobile-root .arrow-tip {
+  margin-left: -17.7px; }
 
 .pc-root .page-next .dollar {
   width: 485px;
@@ -1488,6 +1504,22 @@ th {
   to {
     -webkit-transform: scaleY(1);
             transform: scaleY(1); } }
+.mobile-root .summary {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 40px;
+  max-width: 80%;
+  font-weight: normal;
+  margin-left: auto;
+  margin-right: auto; }
+.mobile-root .join-us {
+  text-decoration: none;
+  background: url(../images/join_us.png) 0 0 no-repeat;
+  background-size: 100%;
+  width: 161px;
+  height: 45.5px;
+  margin-bottom: 10%; }
+
 .pc-root .page-time {
   position: relative;
   height: 100%;
