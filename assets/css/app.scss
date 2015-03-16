@@ -640,7 +640,7 @@ th {
     height: 100%;
   }
 }
-.pc-root {
+.pc-root,.mobile-root {
   .section {
     background-size: 100% 100%;
     background-position: center center;
@@ -681,6 +681,17 @@ th {
     background-size: 100% 100%;
     display: inline-block;
     background-image: url(../images/logo.png);
+  }
+}
+
+.mobile-root {
+  .section img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .page-home {
+    background: transparent;
   }
 }
 
@@ -1082,24 +1093,38 @@ th {
       background-size: auto 100%;
       margin-bottom: 10%;
     }
-    .arrow-tip {
-      display: inline-block;
-      background: url(../images/arrow.png) center center no-repeat;
-      background-size: 100%;
-      $zoom: 0.6;
-      width: (59px * $zoom);
-      height: (57px * $zoom);
-      position: absolute;
-      left: 50%;
-      bottom: 10%;
-      margin-left: -30px;
-      animation: flipBottom 1s linear infinite;
-      animation-direction:alternate;
-    }
 
   } //.page-home end
 } // .pc-root end
 
+.mobile-root .page-home{
+  background-color: #009fed;
+  color: #fff;
+  .title {
+    margin-bottom: 20%;
+  }
+}
+
+
+.pc-root,.mobile-root {
+  .arrow-tip {
+    display: inline-block;
+    background: url(../images/arrow.png) center center no-repeat;
+    background-size: 100%;
+    $zoom: 0.6;
+    width: (59px * $zoom);
+    height: (57px * $zoom);
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    margin-left: -30px;
+    animation: flipBottom 1s linear infinite;
+    animation-direction:alternate;
+  }
+}
+.mobile-root .arrow-tip{
+  margin-left: -(59px*0.6/2);
+}
 
 .pc-root .page-next {
   .dollar {
@@ -1470,6 +1495,27 @@ th {
   to {
     transform: scaleY(1);
   }
+}
+
+.mobile-root {
+  .summary {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 40px;
+    max-width: 80%;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .join-us {
+    text-decoration: none;
+    background: url(../images/join_us.png) 0 0 no-repeat;
+    background-size: 100%;
+    width: (322px/2);
+    height: (91px/2);
+    margin-bottom: 10%;
+  }
+
 }
 
 .pc-root .page-time {
