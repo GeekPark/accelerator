@@ -1100,7 +1100,24 @@ th {
 
 .mobile-root .arrow-tip {
   margin-left: -17.7px; }
+.mobile-root .title {
+  font-weight: normal;
+  font-size: 2.5rem; }
+.mobile-root .logo {
+  margin-top: 5%;
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9); }
 
+@media screen and (max-width: 375px) {
+  #fp-nav ul li a span {
+    opacity: .6;
+    -webkit-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+            transform: scale(0.7); }
+
+  #fp-nav ul li a:active span {
+    opacity: .9; } }
 .pc-root .page-next .dollar {
   width: 485px;
   height: 682.5px;
@@ -1442,6 +1459,10 @@ th {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); } }
+.mobile-root .page-plugin {
+  background: url(../images/mobile/page-plugin.png) center center no-repeat;
+  background-size: 100% auto; }
+
 .pc-root .page-summary .page-summary-txt {
   width: 569px;
   height: 89px;
@@ -1510,15 +1531,22 @@ th {
   line-height: 40px;
   max-width: 80%;
   font-weight: normal;
-  margin-left: auto;
-  margin-right: auto; }
+  margin: 10% auto;
+  word-spacing: 3px; }
 .mobile-root .join-us {
   text-decoration: none;
   background: url(../images/join_us.png) 0 0 no-repeat;
   background-size: 100%;
   width: 161px;
   height: 45.5px;
-  margin-bottom: 10%; }
+  margin-bottom: 10%;
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8); }
+.mobile-root .logo {
+  -webkit-transform: scale(0.8) translateY(-100%);
+      -ms-transform: scale(0.8) translateY(-100%);
+          transform: scale(0.8) translateY(-100%); }
 
 .pc-root .page-time {
   position: relative;
@@ -1653,3 +1681,6 @@ th {
     opacity: 1;
     -webkit-transform: scaleY(1);
             transform: scaleY(1); } }
+.mobile-root .page-time {
+  background: #fff url(../images/mobile/page-time.png) center center no-repeat;
+  background-size: 100% auto; }
