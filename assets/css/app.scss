@@ -1330,10 +1330,10 @@ th {
   }
   .underline {
     display: inline-block;
-    $x: 120px;
-    $y: 253px;
-    $w: 265px;
-    $h: 8px;
+    $x: 117px;
+    $y: 0px;
+    $w: 268px;
+    $h: 262px;
     @include adjustBg($x, $y, $w, $h);
   }
   .plus {
