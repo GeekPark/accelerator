@@ -4,6 +4,7 @@ lock '3.3.5'
 set :application, 'accelerator'
 set :deploy_user, 'www'
 set :repo_url, 'git@github.com:GeekPark/accelerator.git'
+# set :repo_url, 'git@bitbucket.org:geekpark/accelerator.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call

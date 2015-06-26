@@ -10,9 +10,9 @@ set :branch, "master"
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :server_name, "accelerator.geekpark.net"
 
-server 'geeeeek', user: 'www', roles: %w{web app db}, primary: true
+server 'geekpark.net', user: 'www', roles: %w{web app db}, primary: true
 
-set :deploy_to, "/home/#{fetch(:deploy_user)}/#{fetch(:full_app_name)}"
+set :deploy_to, "~/#{fetch(:full_app_name)}"
 
 # Custom SSH Options
 # ==================
